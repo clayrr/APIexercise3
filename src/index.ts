@@ -47,29 +47,18 @@ app.get("/sort", (req: Request, res: Response) => {
     }
 });
 
-///target should take an additional number parameter target , 
-//and return whether there are two numbers in the array that sum to target
-
-/*
-function sumTarget(array: Array, sum: any){
-    const array2 = array.sort();
-    for (let i = 0; i < length.array; i++){
-
-    }
-}*/
-
 function sumTarget(array: any, sum: any) {
-    // Sort the array in ascending order
+    // Sort 
     const array2 = array.sort(); 
-    // Loop through the array to find a pair that adds up to the sum
+    // Loop 
     for (let i = 0; i < array2.length; i++) {
         for (let j = i + 1; j < array2.length; j++) {
             if (array2[i] + array2[j] === sum) {
-                return "yes, there is a pair"; // Found a pair
+                return "yes, there is a pair"; 
             }
         }
     }
-    return "no there is not a pair"; // No pair found
+    return "no there is not a pair"; 
 }
 
 app.get("/target", (req: Request, res: Response) => {
